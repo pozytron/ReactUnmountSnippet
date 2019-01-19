@@ -1,2 +1,0 @@
-# ReactUnmountSnippet
-Created with CodeSandbox
