@@ -1,32 +1,25 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import Menu from "./Menu/menu";
+import ListElement from "./ListElement/listElement";
 
 import "./layout.css";
-class Menu extends React.Component {
-  handleClick = () => {
-    if (typeof this.props.onUnmount === "function") {
-      console.log("dasdasd");
-    }
-  };
-  render() {
-    return (
-      <nav>
-        <button>Dodaj</button>
-        <button>Usuń</button>
-        <button>Edytuj</button>
-        <button onClick={this.handleClick}>Odmontuj</button>
-      </nav>
-    );
-  }
-}
 
 export default class ToDoList extends React.Component {
-  unmountCallback = () => {};
+  unmountCallback = string => {
+    console.log(string);
+  };
   render() {
     return (
       <div className="list-container">
         <Menu onUnmount={() => this.unmountCallback()} />
         <p>THIS IS A CONTAINER FOR LIST </p>
+        <table>
+          <tbody>
+            {this.props.data.map((el, i) => {
+              return <ListElement key={i} data={el} />;
+            })}
+          </tbody>
+        </table>
       </div>
     );
   }

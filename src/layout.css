@@ -4,3 +4,8 @@
   border: 3px dashed #bada55;
   height: 750px;
 }
+
+table {
+  width: 100%;
+  border: 3px dashed #b000b5;
+}
